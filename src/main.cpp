@@ -4,6 +4,7 @@ int main()
 {
 	sf::RenderWindow window(sf::VideoMode({ 800, 600 }), "My Window");
 	sf::Texture texture("assets/image.png");
+	sf::Sprite sprite(texture);
 	while (window.isOpen())
 	{
 		while (const std::optional event = window.pollEvent())
@@ -12,6 +13,7 @@ int main()
 				window.close();
 		}
 		window.clear();
+		window.draw(sprite);
 		window.display();
 	}
 }
